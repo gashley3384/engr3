@@ -87,7 +87,7 @@ while True:
 ### Wiring
 
 ![WiringSolution](media/LCDScreenWiring.png)
-
+     
 
 
 
