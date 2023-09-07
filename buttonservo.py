@@ -20,12 +20,12 @@ btn2.pull = Pull.DOWN
 angle = 1
 
 while True:
-    if btn.value:
+    if btn.value & angle > 5:
         print(angle)
         angle = angle -5
         my_servo.angle = angle 
         time.sleep(0.05)
-    if btn2.value:
+    if btn2.value & angle < 170:
         print(angle)
         angle = angle + 5
         my_servo.angle = angle
