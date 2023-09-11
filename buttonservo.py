@@ -17,15 +17,15 @@ btn2 = DigitalInOut(board.D2)
 btn2.direction = Direction.INPUT
 btn2.pull = Pull.DOWN
 
-angle = 1
+angle = 90
 
 while True:
-    if btn.value & angle > 5:
-        print(angle)
+    if btn.value and angle > 5:
+        print(angle)    
         angle = angle -5
         my_servo.angle = angle 
         time.sleep(0.05)
-    if btn2.value & angle < 170:
+    if btn2.value and angle < 170:
         print(angle)
         angle = angle + 5
         my_servo.angle = angle

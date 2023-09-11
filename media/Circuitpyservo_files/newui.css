@@ -1,0 +1,122 @@
+/*format background (image, color, etc.)*/
+body.ic-Login-Body{
+background-size: auto;
+background-attachment: fixed;
+}
+ 
+/*position the main login box area; This code sets it 100 pixels from the top*/
+.ic-Login__container{
+    margin-top: 100px;
+}
+
+.ic-Login__body {
+    background: none;
+    border: 2px solid none;
+    padding: 122px 24px 12px 310px;
+    margin-top: 20px;
+    margin-bottom: -8px;
+}
+ 
+/*login box*  We changed the size to 465x665 to accommodate the size of our background image*/
+.ic-Login__content{
+    background: url('https://s3.amazonaws.com/canvasnewui/login.png') no-repeat !important;
+    height: 407px; 
+    width: 604px; 
+    box-shadow: 0 4px 20px -2px #000000;
+    padding: 0px;
+}
+
+.ic-Login__innerContent{
+    padding-top:0px;
+    border:2px solid;
+    border-radius:5px
+    margin:0px 0px 0px 50px;
+  
+    /*background:url('https://du11hjcvx0uqb.cloudfront.net/dist/images/login/canvas-logo-a66b946d8d.svg') no-repeat;*/
+    background-position-x: 10px;
+    background-position-y: 10px;
+}
+
+.ic-Login-header__logo{
+    margin-top:10px;
+}
+
+.ic-Login-header__links .ic-Login__link {
+    display: block;
+    margin-top: 14px;
+    
+}
+ 
+/*Hide Canvas header logo - Also suppresses parent login info*/
+
+/*position entire login form (username, password, stay signed in, forgot password, log in button)* 114 to 50/
+#login_form{
+    margin: 40px 0px 0px 0px;
+}
+ 
+/*Forgot Password? link*/
+
+.ic-Login__link {
+    color: #fff !important;
+    display: block;
+}
+
+#login_forgot_password.ic-Login__link.forgot_password_link{
+    display: none;
+}
+
+.ic-Login__header{
+    display: block;
+}
+
+/*Added to move browse link down*/
+.ic-Login__headerBrowse{
+    display: block;
+    margin-top: 110px;
+}
+
+/*.ic-Login__header .ic-Login__header__logo img {
+    display: none;
+}*/
+
+
+.ic-Login__register-banner .ic-Login__banner-title {
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+}
+ 
+/*username login box*/
+#pseudonym_session_unique_id{
+    height: 38px;
+    width: 265px;
+    margin: 0px 0px -8px 0px;
+}
+ 
+/*password login box*/
+#pseudonym_session_password{
+    height: 38px;
+    width: 265px;
+    margin: 0px 0px -8px 0px;
+}
+
+ 
+
+}
+ 
+/*Stay Signed In link*/
+label[for=pseudonym_session_remember_me]{
+    color: #FFFFFF !important;
+}
+ 
+/*add Canvas image at bottom container*/
+.ic-Login__actions-timeout{
+    background: url("https url of image") no-repeat 65%;
+}
