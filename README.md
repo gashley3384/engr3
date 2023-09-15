@@ -141,6 +141,8 @@ while True:#like void loop for arduino, if btn.value is saying if button is pres
 
 ### Evidence
 
+![](media/Circuitpyservo.mp4)
+
 ### Wiring
 
 ![](media/circuitpyservo.png)
