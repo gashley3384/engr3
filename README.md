@@ -1,5 +1,6 @@
 # CircuitPython
-This repository will actually serve as an aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+engr 3 notebook
+
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
 * [Hello_CircuitPython](#Hello_CircuitPython)
@@ -30,6 +31,8 @@ Code goes here
 And here is how you should give image credit to someone if you use their work:
 
 Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
+
+![wiring_diagram] (media/Circuitpyservo.mp4)
 
 
 
@@ -87,8 +90,66 @@ while True:
 ### Wiring
 
 ![WiringSolution](media/LCDScreenWiring.png)
-     
 
+
+
+# CircuitPython_Servo
+
+### Description & Code
+
+For this assignment we were assigned to make a servo move based on two buttons that were being pressed. When you press one button, the servo would start
+moving one way, and when you pressed the other button it would start moving the other way. 
+
+```python
+import time
+import board
+import pwmio
+from digitalio import DigitalInOut, Direction, Pull
+from adafruit_motor import servo
+
+# create a PWMOut object on Pin A2.
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
+
+# Create a servo object, my_servo.
+my_servo = servo.Servo(pwm)
+
+btn = DigitalInOut(board.D6) #assign digital pins to buttons
+btn.direction = Direction.INPUT
+btn.pull = Pull.DOWN 
+btn2 = DigitalInOut(board.D2)
+btn2.direction = Direction.INPUT
+btn2.pull = Pull.DOWN
+
+angle = 90 #starter angle to declare variable
+
+while True:#like void loop for arduino, if btn.value is saying if button is pressed
+    if btn.value and angle > 5: # only running this loop when it's above 5 keeps angle from going out of range
+        print(angle)    
+        angle = angle -5 #make angle variable lower
+        my_servo.angle = angle #set servo angle to variable
+        time.sleep(0.05)
+    if btn2.value and angle < 170:# keeps angle from going out of range on the other end
+        print(angle)
+        angle = angle + 5 
+        my_servo.angle = angle #moving servo in the other direction
+        time.sleep(0.05)
+
+
+
+    time.sleep(0.1) # sleep for debounce
+```
+
+### Evidence
+
+### Wiring
+
+![](media/circuitpyservo.png)
+
+### Reflection 
+
+The hardest part of this assignment for me was probably figuring out how to work the buttons using circuitpython and then combining the servo and
+arduino code. I started trying to use buttons along with the servo without ever starting with buttons, which meant I struggled for a bit. The servo
+part of this assignment was just a matter of finding some servo code that worked well and pasting it into vs code. 
 
 
 
