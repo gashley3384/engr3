@@ -155,29 +155,7 @@ part of this assignment was just a matter of finding some servo code that worked
 
 
 
-
-## CircuitPython_LCD
-
-### Description & Code
-
-```python
-Code goes here
-
-```
-
-### Evidence
-
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
-
-### Wiring
-
-### Reflection
-
-
-
-
-
-## NextAssignment
+# Ultrasonic sensor
 
 ### Description & Code
 
