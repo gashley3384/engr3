@@ -16,9 +16,12 @@ def rainbow_cycle(wait):
         for pixel in range(len(pixels)):  # pylint: disable=consider-using-enumerate
             pixel_index = (pixel * 256 // len(pixels)) + color * 5
             pixels[pixel] = colorwheel(pixel_index & 255)
+            
+
         pixels.show()
         time.sleep(wait)
 
 
 while True:
+    print("running")
     rainbow_cycle(SPEED)
