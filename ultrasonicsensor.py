@@ -20,12 +20,19 @@ green = 0
 while True:
     try:
         print((sonar.distance))
+        if (sonar.distance>=2 and sonar.distance<20):
+            blue=simpleio.map_range(sonar.distance,5,20,0,255)
+            red=simpleio.map_range(sonar.distance,5,20,255,0)
+            pixels.fill((red,blue,green))
+            pixels.show()
+            
+        if (sonar.distance>=20 and sonar.distance<35):
+            blue=simpleio.map_range(sonar.distance,5,20,255,0)
+            green=simpleio.map_range(sonar.distance,5,20,0,255)
+            pixels.fill((green,blue,red))
+            pixels.show()
     except RuntimeError:
         print("Retrying!")
     time.sleep(0.1)
-    if (sonar.distance>=5 and sonar.distance<20):
-        blue=simpleio.map_range(sonar.distance,5,20,0,255)
-        red=simpleio.map_range(sonar.distance,5,20,255,0)
-    if (sonar.distance>=20 and sonar.distance<35):
-        blue=simpleio.map_range(sonar.distance,5,20,255,0)
-        green=simpleio.map_range(sonar.distance,5,20,0,255)
+
+    
