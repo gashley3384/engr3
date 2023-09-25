@@ -12,7 +12,6 @@ sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
 
 pixels = neopixel.NeoPixel(PIN, NUMPIXELS, brightness=BRIGHTNESS, auto_write=False)
 
-colorvar = 5
 blue = 0
 red = 0
 green = 0
@@ -20,16 +19,18 @@ green = 0
 while True:
     try:
         print((sonar.distance))
-        if (sonar.distance>=2 and sonar.distance<20):
+        if (sonar.distance>=5 and sonar.distance<20):
             blue=simpleio.map_range(sonar.distance,5,20,0,255)
             red=simpleio.map_range(sonar.distance,5,20,255,0)
-            pixels.fill((red,blue,green))
+            green=0
+            pixels.fill((red,green,blue))
             pixels.show()
             
         if (sonar.distance>=20 and sonar.distance<35):
-            blue=simpleio.map_range(sonar.distance,5,20,255,0)
-            green=simpleio.map_range(sonar.distance,5,20,0,255)
-            pixels.fill((green,blue,red))
+            blue=simpleio.map_range(sonar.distance,20,35,255,0)
+            green=simpleio.map_range(sonar.distance,20,35,0,255)
+            red=0
+            pixels.fill((red,green,blue))
             pixels.show()
     except RuntimeError:
         print("Retrying!")
