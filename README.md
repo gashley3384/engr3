@@ -5,7 +5,7 @@ engr 3 notebook
 * [Table of Contents](#TableOfContents)
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
-* [CircuitPython_LCD](#CircuitPython_LCD)
+* [CircuitPython_UltrasonicSensor](#Ultrasonic_sensor)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -155,7 +155,7 @@ part of this assignment was just a matter of finding some servo code that worked
 
 
 
-# Ultrasonic sensor
+# Ultrasonic_sensor
 
 ### Description & Code
 

@@ -28,7 +28,6 @@ while True:
             
         if (sonar.distance>=20 and sonar.distance<35):
             blue=simpleio.map_range(sonar.distance,20,35,255,0)
-            green=simpleio.map_range(sonar.distance,20,35,0,255)
             red=0
             pixels.fill((red,green,blue))
             pixels.show()
