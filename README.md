@@ -159,13 +159,60 @@ part of this assignment was just a matter of finding some servo code that worked
 
 ### Description & Code
 
+For this assignment, we were supposed to make an rgb led glow in a color of the rainbow according to the distance recieved by an ultrasonic sensor. 
+It was supposed to be red when the object was 5 or less cm away, then shift up to blue as it got up to 20 cm, then to green as it approached 35 cm.
+
 ```python
-Code goes here
+import time
+import board
+import adafruit_hcsr04
+import neopixel
+import simpleio
+
+NUMPIXELS = 1  # Update this to match the number of LEDs.
+BRIGHTNESS = 0.05 # A number between 0.0 and 1.0, where 0.0 is off, and 1.0 is max.
+PIN = board.NEOPIXEL  # This is the default pin on the 5x5 NeoPixel Grid BFF.
+
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
+
+pixels = neopixel.NeoPixel(PIN, NUMPIXELS, brightness=BRIGHTNESS, auto_write=False)
+
+blue = 0
+red = 0
+green = 0
+
+while True:
+    try:
+        print((sonar.distance))
+        if (sonar.distance>=5 and sonar.distance<20):
+            blue=simpleio.map_range(sonar.distance,5,20,0,255)
+            red=simpleio.map_range(sonar.distance,5,20,255,0)
+            green=0
+            pixels.fill((red,green,blue))
+            pixels.show()
+            
+        if (sonar.distance>=20 and sonar.distance<35):
+            blue=simpleio.map_range(sonar.distance,20,35,255,0)
+            green=simpleio.map_range(sonar.distance,20,35,0,255)
+            red=0
+            pixels.fill((red,green,blue))
+            pixels.show()
+    except RuntimeError:
+        print("Retrying!")
+    time.sleep(0.1)
 
 ```
 
 ### Evidence
 
+![](media/ultrasonicsensor.gif.gif)
+
 ### Wiring
 
+![](media/Ultrasonic%20Sensor%20Wiring.png)
+
 ### Reflection
+
+This assignment took me quite a while. I struggled a lot with trying to print values taken from my ultrasonic sensor to the led,
+but eventually Rafi gave me a function which really helped. I had some of the values in the wrong order close to the end, which
+meant that the LED would go from red to green and then back to red, when it was supposed to go from red to blue to green. 
