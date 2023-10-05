@@ -163,7 +163,7 @@ For this assignment, we were supposed to make an rgb led glow in a color of the 
 It was supposed to be red when the object was 5 or less cm away, then shift up to blue as it got up to 20 cm, then to green as it approached 35 cm.
 
 ```python
-import time
+import time #librarby
 import board
 import adafruit_hcsr04
 import neopixel
@@ -173,33 +173,35 @@ NUMPIXELS = 1  # Update this to match the number of LEDs.
 BRIGHTNESS = 0.05 # A number between 0.0 and 1.0, where 0.0 is off, and 1.0 is max.
 PIN = board.NEOPIXEL  # This is the default pin on the 5x5 NeoPixel Grid BFF.
 
-sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6) #setup for ultrasonic, define pins and stuff
 
-pixels = neopixel.NeoPixel(PIN, NUMPIXELS, brightness=BRIGHTNESS, auto_write=False)
+pixels = neopixel.NeoPixel(PIN, NUMPIXELS, brightness=BRIGHTNESS, auto_write=False)#setup for neopixels
 
-blue = 0
+blue = 0 #variables for each color to use
 red = 0
 green = 0
 
 while True:
     try:
-        print((sonar.distance))
-        if (sonar.distance>=5 and sonar.distance<20):
-            blue=simpleio.map_range(sonar.distance,5,20,0,255)
-            red=simpleio.map_range(sonar.distance,5,20,255,0)
-            green=0
-            pixels.fill((red,green,blue))
-            pixels.show()
+        print((sonar.distance)) #tell me how far away object is
+        if (sonar.distance>=5 and sonar.distance<20): #red to blue distance
+            blue=simpleio.map_range(sonar.distance,5,20,0,255) #blue is highest at 20 lowest at 0
+            red=simpleio.map_range(sonar.distance,5,20,255,0) #red is highest at 0 lowest at 20
+            green=0 #don't need green, so set it to 0
+            pixels.fill((red,green,blue)) #sets each variable as the color it's supposed to be, use rgb order
+            pixels.show()# prints values to led
             
-        if (sonar.distance>=20 and sonar.distance<35):
-            blue=simpleio.map_range(sonar.distance,20,35,255,0)
+        if (sonar.distance>=20 and sonar.distance<35):#blue to green distance
+            blue=simpleio.map_range(sonar.distance,20,35,255,0) #same idea as first if except blue is decreasing and green is increasing
             green=simpleio.map_range(sonar.distance,20,35,0,255)
             red=0
-            pixels.fill((red,green,blue))
+            pixels.fill((red,green,blue))#need another print because the first one won't be active if distance isn't in the correct range
             pixels.show()
-    except RuntimeError:
+    except RuntimeError: #don't want it to do anything if it gets an error, so just tell me and move on
         print("Retrying!")
     time.sleep(0.1)
+
+    
 
 ```
 
@@ -216,3 +218,32 @@ while True:
 This assignment took me quite a while. I struggled a lot with trying to print values taken from my ultrasonic sensor to the led,
 but eventually Rafi gave me a function which really helped. I had some of the values in the wrong order close to the end, which
 meant that the LED would go from red to green and then back to red, when it was supposed to go from red to blue to green. 
+
+
+
+
+
+
+
+## Onshape_Assignment_Template
+
+### Assignment Description
+
+The purpose of this assignment was to practice for the onshape exam. We were meant to make a part using a few drawings and 3 dimensions which we could change.
+
+
+### Evidence
+
+
+
+### Link 
+
+(https://cvilleschools.onshape.com/documents/535a37c3c46d846caafb9616/w/38fe14ad2e16f8c84bbf5bc9/e/5b39fd5ad04f78a0c2185d85)
+
+### Reflection
+
+When I was filleting, there was one section of the part that could not be filleted correctly with the way that I had made it, so I went back to the initial sketch,
+and added in a sketch fillet which worked. One other problem I came across was that when I changed the dimensions to make the new part, one of the arms was too thick.
+I used the rollback bar and figured out that one of the sketches had used the old dimension of the B variable instead of the actual variable, which meant it didn't change.
+
+&nbsp;
