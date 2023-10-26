@@ -1,6 +1,6 @@
 # CircuitPython
 engr 3 notebook
-
+;lkjnbh
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
 * [Hello_CircuitPython](#Hello_CircuitPython)
@@ -225,16 +225,19 @@ meant that the LED would go from red to green and then back to red, when it was 
 
 
 
-## Onshape_Assignment_Template
+## Swing Arm
 
 ### Assignment Description
 
-The purpose of this assignment was to practice for the onshape exam. We were meant to make a part using a few drawings and 3 dimensions which we could change.
+The purpose of this assignment was to practice for the onshape exam. We were meant to make a swing arm using a few drawings and 3 dimensions which we could change.
 
 
 ### Evidence
 
-
+![](media/1st%20swing%20arm%20angle%201.png)
+![](media/2nd%20Swing%20Arm%20Angle.png)
+![](media/longswingarm1.png)
+![](media/longswingarm2.png)
 
 ### Link 
 
@@ -247,3 +250,26 @@ and added in a sketch fillet which worked. One other problem I came across was t
 I used the rollback bar and figured out that one of the sketches had used the old dimension of the B variable instead of the actual variable, which meant it didn't change.
 
 &nbsp;
+
+
+
+
+## Hanger
+
+### Assignment Description
+
+For this assignment, we were supposed to build a hanger in onshape using only the drawings, and compare the mass of the hanger with the mass it was supposed to have. 
+
+### Evidence
+
+![](media/hanger1.png)
+![](media/Hanger2.png)
+
+### Link
+
+(https://cvilleschools.onshape.com/documents/d1c1c33686da89b335825df9/w/d61aa3a7290e30b06198126a/e/cdad61fe382470d9c3da808c?renderMode=0&uiState=652d8e3ae5a1bc543bad632f)
+
+### Reflection
+
+The hardest part of doing this assignment was deciding how to start, but once I had done that, it was not difficult to continue doing the assignment. I also had a little bit
+of trouble with the main curve of the hanger, but I managed to figure it out. I also used the mirror tool, which meant I really only had to make half of the hanger. 
