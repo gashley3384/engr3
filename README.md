@@ -1,12 +1,14 @@
 # CircuitPython
 engr 3 notebook
-;lkjnbh
+
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython_UltrasonicSensor](#Ultrasonic_sensor)
-* [NextAssignmentGoesHere](#NextAssignment)
+* [Motor_Control](#motor_control)
+* [Swing_Arm](#Swing_Arm)
+* [Hanger](#hanger)
 ---
 
 ## Hello_CircuitPython
@@ -220,12 +222,31 @@ but eventually Rafi gave me a function which really helped. I had some of the va
 meant that the LED would go from red to green and then back to red, when it was supposed to go from red to blue to green. 
 
 
+# Motor_control
+
+### Description and Code
+
+For this assignment, we were supposed to make a motor speed up according to the values being spit out by a potentiometer. This assignment
+was designed to help us learn how to wire a motor without frying any parts, and how to code motors. 
+
+### Evidence
+
+This assignment wasn't completed, so I do not have a video of it working.
+
+### Wiring
+
+![](media/Motor%20Control%20Wiring.png)
+
+### Reflection
+
+I didn't work very quickly, so I wasn't able to complete this assignment on time. The wiring wasn't too complicated, but the diagrams were a bit
+of a struggle to read. 
 
 
 
 
 
-## Swing Arm
+# Swing_Arm
 
 ### Assignment Description
 
@@ -254,7 +275,7 @@ I used the rollback bar and figured out that one of the sketches had used the ol
 
 
 
-## Hanger
+# Hanger
 
 ### Assignment Description
 
