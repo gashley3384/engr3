@@ -9,6 +9,9 @@ engr 3 notebook
 * [Motor_Control](#motor_control)
 * [Swing_Arm](#Swing_Arm)
 * [Hanger](#hanger)
+* [Multi-part_cylinder](#multi-part_cylinder)
+* [V-Block_practice_part](#v-block)
+
 ---
 
 ## Hello_CircuitPython
@@ -294,3 +297,49 @@ For this assignment, we were supposed to build a hanger in onshape using only th
 
 The hardest part of doing this assignment was deciding how to start, but once I had done that, it was not difficult to continue doing the assignment. I also had a little bit
 of trouble with the main curve of the hanger, but I managed to figure it out. I also used the mirror tool, which meant I really only had to make half of the hanger. 
+
+
+
+# Multi-part_Cylinder
+
+### Assignment Description
+
+For this assignment, we were using several drawings in order to find the masses of a part as we made changes to it. This assignment was meant to help us practice for the
+Onshape exam. 
+
+### Evidence
+
+![](media/multipart%20practice.png)
+![](media/multipart%20practice.png)
+
+### Link
+
+(https://cvilleschools.onshape.com/documents/0d6498a1596a050a7b3d053d/w/5c4263bcbd63eb0a61602202/e/4139c3d63746489a8ffe07a7?renderMode=0&uiState=6543f5368c4c2a2a82489e42)
+
+### Reflection
+
+This assignment was good insight into what the Onshape exam will be like. I managed to make the parts pretty well using the drawings given, and I didn't directly dimension
+any of the dimensions that were in parentheses. The revisions were mostly correct, but one of the masses was off. 
+
+
+
+
+# V-block
+
+### Assignment Description
+
+For this assignment, we were supposed to use a series of drawings to create, then edit a single part. This assignment was meant to help us practice for the Onshape exam. 
+
+### Evidence
+
+![](media/V-block.png)
+![](media/V-blockside.png)
+
+### Link
+
+(https://cvilleschools.onshape.com/documents/0d6498a1596a050a7b3d053d/w/5c4263bcbd63eb0a61602202/e/4139c3d63746489a8ffe07a7?renderMode=0&uiState=6543f5368c4c2a2a82489e42)
+
+### Reflection
+
+This assignment was not very difficult for me. I managed to get through it without too much difficulty. I learned that a lot of the little ridge on the part can be dimensioned
+just by saying it's 5 millimeters wide. I did forget to change the part material to titanium from aluminum 1060, which messed up the mass I had. 
