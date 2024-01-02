@@ -343,3 +343,5 @@ For this assignment, we were supposed to use a series of drawings to create, the
 
 This assignment was not very difficult for me. I managed to get through it without too much difficulty. I learned that a lot of the little ridge on the part can be dimensioned
 just by saying it's 5 millimeters wide. I did forget to change the part material to titanium from aluminum 1060, which messed up the mass I had. 
+
+
