@@ -11,6 +11,7 @@ engr 3 notebook
 * [Hanger](#hanger)
 * [Multi-part_cylinder](#multi-part_cylinder)
 * [V-Block_practice_part](#v-block)
+* [Rotary_encoder_&_lcd](#rotary_encoder__lcd)
 
 ---
 
@@ -345,3 +346,73 @@ This assignment was not very difficult for me. I managed to get through it witho
 just by saying it's 5 millimeters wide. I did forget to change the part material to titanium from aluminum 1060, which messed up the mass I had. 
 
 
+
+# Rotary_encoder_&_lcd
+
+### Assignment Description and Code
+
+For this assignment, we were assigned to use a rotary encoder to scroll through a menu on an LCD screen. When the rotary encoder's button was pressed, it was supposed to
+light up a neopixel on the arduino according to the value of the menu. 
+
+```python
+import rotaryio
+import board
+import neopixel
+import digitalio
+from lib.lcd.lcd import LCD
+from lib.lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+
+enc = rotaryio.IncrementalEncoder(board.D4, board.D3, divisor=2)
+
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x3f), num_rows=2, num_cols=16)
+last_index = None
+menu_index = 0
+menu = ["stop", "caution", "go"]
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+
+button = digitalio.DigitalInOut(board.D2)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
+button_state = None
+
+while True:
+    menu_index = enc.position
+    menu_indexlcd = menu_index % 3
+    lcd.set_cursor_pos(0,0)
+    lcd.print("Push for:") 
+    lcd.set_cursor_pos(1,0)
+    lcd.print("                     ")
+    lcd.set_cursor_pos(1,0)
+    lcd.print(menu[menu_indexlcd])
+    if last_index is None or menu_index is not last_index:
+        print(menu[menu_indexlcd])
+        last_index = menu_index
+    if not button.value and button_state is None:
+        button_state = "pressed"
+    if button.value and button_state == "pressed":
+        print("Button is pressed")
+        button_state = None
+    if menu_indexlcd == 0 and button_state == "pressed":
+        led[0] = (255, 0, 0)
+    if menu_indexlcd == 1 and button_state == "pressed":
+        led[0] = (175, 175, 0)
+    if menu_indexlcd == 2 and button_state == "pressed":
+        led[0] = (0, 255, 0)
+
+```
+
+### Evidence
+
+![](media/menu.stoplight.gif.gif)
+
+### Wiring
+
+![](media/lcdencoderwiring.png)
+
+### Reflection
+
+This assignment was made a little bit easier by the fact that we didn't have to find the code on the internet or come up with it ourselves,
+and I was mostly able to use the slideshow provided on canvas to write the code. The problems I did have to solve weren't too difficult, and
+were mostly just things like making the neopixel follow the menu only when the button was pressed. Overall this assignment wasn't too hard, it
+just took some time to learn about menus, and write the code. 
