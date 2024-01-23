@@ -469,7 +469,7 @@ while True:
 
 ### Evidence
 
-![](media/Photointgif.mp4)
+![](media/photointerruptergif.gif)
 
 ### Wiring
 
