@@ -3,15 +3,16 @@ engr 3 notebook
 
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
-* [Hello_CircuitPython](#Hello_CircuitPython)
-* [CircuitPython_Servo](#CircuitPython_Servo)
-* [CircuitPython_UltrasonicSensor](#Ultrasonic_sensor)
-* [Motor_Control](#motor_control)
-* [Swing_Arm](#Swing_Arm)
+* [Hello CircuitPython](#Hello_CircuitPython)
+* [CircuitPython Servo](#CircuitPython_Servo)
+* [CircuitPython UltrasonicSensor](#Ultrasonic_sensor)
+* [Motor Control](#motor_control)
+* [Swing Arm](#Swing_Arm)
 * [Hanger](#hanger)
-* [Multi-part_cylinder](#multi-part_cylinder)
-* [V-Block_practice_part](#v-block)
-* [Rotary_encoder_&_lcd](#rotary_encoder__lcd)
+* [Multi-part cylinder](#multi-part_cylinder)
+* [V-Block practice part](#v-block)
+* [Rotary encoder & lcd](#rotary_encoder__lcd)
+* [Photointerrupter](#photointerrupter)
 
 ---
 
@@ -416,3 +417,68 @@ This assignment was made a little bit easier by the fact that we didn't have to 
 and I was mostly able to use the slideshow provided on canvas to write the code. The problems I did have to solve weren't too difficult, and
 were mostly just things like making the neopixel follow the menu only when the button was pressed. Overall this assignment wasn't too hard, it
 just took some time to learn about menus, and write the code. 
+
+
+# Photointerrupter
+
+### Assignment Description and Code
+
+For this assignment, we were supposed to use a photointerrupter to make a number tick up on an LCD screen. When you put something in the photointerrupter
+beam, it would register it, and tick a variable up by 1, which would be printed onto an LCD screen. 
+
+```python
+import time
+import board
+import digitalio
+from lib.lcd.lcd import LCD
+from lib.lcd.i2c_pcf8574_interface import I2CPCF8574Interface #librarby
+
+interruptnum = 0 #number of interrupts
+
+# Set up the photointerrupter using digital pin 2.
+photointerrupter = digitalio.DigitalInOut(board.D2)
+
+# Set the photointerrupter as an input.
+photointerrupter.direction = digitalio.Direction.INPUT
+
+# Use the internal pull-up resistor. 
+photointerrupter.pull = digitalio.Pull.UP
+
+# Set the photointerrupter_state as None for now!
+photointerrupter_state = None   
+
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x3f), num_rows=2, num_cols=16)
+
+while True:
+     print(photointerrupter.value)
+     lcd.set_cursor_pos(0,0) #setting where the text is printed on LCD screen
+     lcd.print("number interrupt") #what text to write
+     lcd.set_cursor_pos(1,0)
+     lcd.print("                ")
+     lcd.set_cursor_pos(1,0)
+     lcd.print(str(interruptnum))#str is string, print the value of interruptnum
+     print(interruptnum)
+     if not photointerrupter.value and photointerrupter_state is None:# button stuff
+          photointerrupter_state = "interrupted"
+     if photointerrupter_state is "interrupted" :
+          photointerrupter_state = None
+     if photointerrupter.value is True:
+          interruptnum = interruptnum + 1
+     time.sleep(1.5) #deeeeeeebooouuunnnnccceee
+```
+
+### Evidence
+
+![](media/Photointgif.mp4)
+
+### Wiring
+
+![](media/Photointwire.png)
+
+I used a switch for the photointerrupter. 
+
+### Reflection
+
+This assignment wasn't too difficult. The wiring is pretty simple, and the code is very similar to something you'd use for a button. I used some of
+my old code from the rotary encoder to do the button, and added in a variable for the number of interrupts that the photointerrupter had detected. 
+I did run into a small problem when trying to print the value to the photointerrupter, but all I had to do was declare it was a string.  
