@@ -482,3 +482,105 @@ I used a switch for the photointerrupter.
 This assignment wasn't too difficult. The wiring is pretty simple, and the code is very similar to something you'd use for a button. I used some of
 my old code from the rotary encoder to do the button, and added in a variable for the number of interrupts that the photointerrupter had detected. 
 I did run into a small problem when trying to print the value to the photointerrupter, but all I had to do was declare it was a string.  
+
+# Stepper_motor_&_Limit_Switch
+
+### Assignment Description and Code
+
+For this assignment, we were supposed to make a stepper motor spin until an arm attached to it hit a limit switch. Once the switch was hit,
+the motor changed direction for a short time.
+
+```python
+import asyncio
+import board
+import keypad
+import time
+import digitalio
+from adafruit_motor import stepper
+
+
+DELAY = 0.01   # Sets the delay time for in-between each step of the stepper motor.
+STEPS = 100    # Sets the number of steps. 100 is half a full rotation for the motor we're using. 
+
+# Set up the digital pins used for the four wires of the stepper motor. 
+coils = (
+    digitalio.DigitalInOut(board.D9),   # A1
+    digitalio.DigitalInOut(board.D10),  # A2
+    digitalio.DigitalInOut(board.D11),  # B1
+    digitalio.DigitalInOut(board.D12),  # B2
+)
+
+# Sets each of the digital pins as an output.
+for coil in coils:
+    coil.direction = digitalio.Direction.OUTPUT
+
+# Creates an instance of the stepper motor so you can send commands to it (using the Adafruit Motor library). 
+motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=None)
+
+
+async def catch_pin_transitions(pin):
+    # Print a message when pin goes low and when it goes high.
+    with keypad.Keys((pin,), value_when_pressed=False) as keys:
+        while True:
+            event = keys.events.get()
+            if event:
+                if event.pressed:
+                    print("pressed")
+                    for step in range(STEPS):
+                        motor.onestep(direction=stepper.BACKWARD, style=stepper.DOUBLE)
+                        time.sleep(DELAY)
+                elif event.released:
+                    print("released")
+            await asyncio.sleep(0)
+
+async def run_motor():
+    while(True):
+        for step in range(STEPS):
+            motor.onestep(style=stepper.DOUBLE)
+            time.sleep(DELAY)
+            await asyncio.sleep(0)
+
+async def main():
+    while(True):
+        interrupt_task = asyncio.create_task(catch_pin_transitions(board.D2))
+        motor_task = asyncio.create_task(run_motor())
+        await asyncio.gather(interrupt_task, motor_task)
+
+asyncio.run(main())
+```
+
+### Wiring Diagram
+
+![](media/Motor%20Wiring.png)
+
+### Evidence
+
+![](media/Motorgif.gif)
+
+### Reflection
+
+This assignment took me a while because I couldn't figure out how to spin the motor properly. It turns out you need a for loop, and the indents are 
+somewhat specific in what they allow and what they don't. I did learn how to use functions better, and I figured out some of the async functions.
+
+
+
+# Robot Gripper
+
+### Assignment Description
+
+For this assignment, we were supposed to create a robot gripper that uses one actuator, and can fully close. 
+
+### Evidence
+
+![](media/Robotgrippergif.gif)
+
+### Link
+
+(https://cvilleschools.onshape.com/documents/f5164bfdd1a83333d17435ab/w/df07c83dd6806d61d127fda7/e/1374e2fc981a20515c84e291?renderMode=0&uiState=65d4fe1223a5641aeadcdb91)
+
+### Reflection
+
+This assignment was pretty fun. I took heavy inspiration from a design I found on the internet, which ended up working pretty well. 
+I learned a little bit more about slider mates, and how to animate things in an onshape assembly. I only made one of every part
+in the part studio which sped things along. I also figured out that if a feature is difficult to mirror, sometimes you can mirror
+the part and then use a boolean to make them into one part. 
