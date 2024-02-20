@@ -13,6 +13,9 @@ engr 3 notebook
 * [V-Block practice part](#v-block)
 * [Rotary encoder & lcd](#rotary_encoder__lcd)
 * [Photointerrupter](#photointerrupter)
+* [Stepper_motor_&_Limit_switch](#stepper_motor__limit_switch)
+* [Robot_Gripper](#robot-gripper)
+
 
 ---
 
