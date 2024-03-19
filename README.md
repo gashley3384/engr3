@@ -15,6 +15,7 @@ engr 3 notebook
 * [Photointerrupter](#photointerrupter)
 * [Stepper_motor_&_Limit_switch](#stepper_motor__limit_switch)
 * [Robot_Gripper](#robot-gripper)
+* [
 
 
 ---
@@ -587,3 +588,18 @@ This assignment was pretty fun. I took heavy inspiration from a design I found o
 I learned a little bit more about slider mates, and how to animate things in an onshape assembly. I only made one of every part
 in the part studio which sped things along. I also figured out that if a feature is difficult to mirror, sometimes you can mirror
 the part and then use a boolean to make them into one part. 
+
+
+# IR_sensor
+
+### Assignment Description & Code
+
+For this assignment, we were supposed to use an IR sensor to detect when an object is close to it, and then change a light based on whether the reading from the sensor
+was positive or negative. 
+
+### Evidence
+
+### Reflection
+
+This assignment wasn't very difficult, I managed to get it done in one class period, and the code was extremely simple. I had a slight hiccup when confusing the way if 
+statements are written for the arduino with the way they are written for circuitpython, but I used another assignment to figure it out. 
