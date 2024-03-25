@@ -15,7 +15,7 @@ engr 3 notebook
 * [Photointerrupter](#photointerrupter)
 * [Stepper_motor_&_Limit_switch](#stepper_motor__limit_switch)
 * [Robot_Gripper](#robot-gripper)
-* [
+* [IR Sensor](#IR_sensor)
 
 
 ---
@@ -598,6 +598,8 @@ For this assignment, we were supposed to use an IR sensor to detect when an obje
 was positive or negative. 
 
 ### Evidence
+
+![](media/IR%20sensor.png)
 
 ### Reflection
 
