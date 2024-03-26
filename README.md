@@ -649,6 +649,8 @@ necessary changes. This assignment was meant to help us practice for the onshape
 
 ### Evidence
 
+![](media/Micstand.png)
+
 ### Link
 
 (https://cvilleschools.onshape.com/documents/935fde87155172b24dd5f455/w/8347c2ed40d2eba9d8a4361c/e/0209da50c297554eddffa3b4?renderMode=0&uiState=66031d5b862982793a31d741)
@@ -667,7 +669,7 @@ For this assignment, we were supposed to use a series of drawings to first assem
 
 ### Evidence
 
-
+![](media/Vicegrip.png)
 
 ### Link
 
