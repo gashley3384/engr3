@@ -597,9 +597,36 @@ the part and then use a boolean to make them into one part.
 For this assignment, we were supposed to use an IR sensor to detect when an object is close to it, and then change a light based on whether the reading from the sensor
 was positive or negative. 
 
+```python
+import board
+import neopixel
+import digitalio
+
+# Set up the IR Sensor using digital pin 2.
+ir_sensor = digitalio.DigitalInOut(board.D2)
+
+
+# Set the photointerrupter as an input.
+ir_sensor.direction = digitalio.Direction.INPUT 
+            
+# Use the internal pull-up resistor.
+ir_sensor.pull = digitalio.Pull.UP 
+
+# Initialize the on-board neopixel and set the brightness.
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+
+while True:
+    print(ir_sensor.value)
+    if (ir_sensor.value is True): 
+         led[0] = (0, 255, 0)
+    if (ir_sensor.value is False):
+         led[0] = (255, 0, 0)
+```
+
 ### Evidence
 
-![](media/)
+![](media/IRsensorgif.gif)
 
 ### Wiring Diagram
 
@@ -608,4 +635,5 @@ was positive or negative.
 ### Reflection
 
 This assignment wasn't very difficult, I managed to get it done in one class period, and the code was extremely simple. I had a slight hiccup when confusing the way if 
-statements are written for the arduino with the way they are written for circuitpython, but I used another assignment to figure it out. 
+statements are written for the arduino with the way they are written for circuitpython, but I used another assignment to figure it out. I learned how to use an IR sensor
+effectively, and it didn't require much work. 
