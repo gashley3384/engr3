@@ -1,5 +1,4 @@
-# CircuitPython
-engr 3 notebook
+# Engineering 3 Notebook
 
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
