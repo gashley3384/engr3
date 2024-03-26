@@ -577,6 +577,8 @@ For this assignment, we were supposed to create a robot gripper that uses one ac
 ### Evidence
 
 ![](media/Robotgrippergif.gif)
+![](media/Closedgripper.png)
+![](media/Opengripper.png)
 
 ### Link
 
