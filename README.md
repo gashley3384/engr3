@@ -16,6 +16,7 @@ engr 3 notebook
 * [Stepper_motor_&_Limit_switch](#stepper_motor__limit_switch)
 * [Robot_Gripper](#robot-gripper)
 * [IR Sensor](#IR_sensor)
+* [Mic-stand multi-part studio](#Mic-stand_multi-part_studio)
 
 
 ---
@@ -637,3 +638,43 @@ while True:
 This assignment wasn't very difficult, I managed to get it done in one class period, and the code was extremely simple. I had a slight hiccup when confusing the way if 
 statements are written for the arduino with the way they are written for circuitpython, but I used another assignment to figure it out. I learned how to use an IR sensor
 effectively, and it didn't require much work. 
+
+
+# Mic-stand_multi-part_studio
+
+### Assignment description
+
+For this assignment, we were supposed to build a mic stand based on drawings that were supplied, then edit the mic stand based on a series of drawings that specified the 
+necessary changes. This assignment was meant to help us practice for the onshape certification exam. 
+
+### Evidence
+
+### Link
+
+(https://cvilleschools.onshape.com/documents/935fde87155172b24dd5f455/w/8347c2ed40d2eba9d8a4361c/e/0209da50c297554eddffa3b4?renderMode=0&uiState=66031d5b862982793a31d741)
+
+### Reflection
+
+This assignment helped me to practice for the Onshape exam. I learned how to be efficient with my edits and get the part CADed quickly. The mic stand also helped me learn how
+to CAD quickly with a predesigned part as a base for the part studio. 
+
+
+# Vice_grip_assembly
+
+### Assignment Description
+
+For this assignment, we were supposed to use a series of drawings to first assemble a group of pre-made parts into a vice grip, then edit the vice grip based on later drawings. 
+
+### Evidence
+
+
+
+### Link
+
+(https://cvilleschools.onshape.com/documents/594e783baba6c0d7473f4309/w/fe78b5701b79e41ccd3b221d/e/394bc1ecdb565f0ea5c380dc?renderMode=0&uiState=66031f6486dc143aaded8d20)
+
+### Reflection
+
+This assignment wasn't too difficult. I learned how to use a parallel mate in an assembly, which was a tool that I had never used before then and has since been an invaluable tool. 
+The codependency of each part on the placement of the other part also helped with the project that we are working on as of 3/26/2024. 
+
