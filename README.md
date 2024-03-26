@@ -599,6 +599,10 @@ was positive or negative.
 
 ### Evidence
 
+![](media/)
+
+### Wiring Diagram
+
 ![](media/IR%20sensor.png)
 
 ### Reflection
