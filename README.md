@@ -16,6 +16,7 @@
 * [Robot_Gripper](#robot-gripper)
 * [IR Sensor](#IR_sensor)
 * [Mic-stand multi-part studio](#Mic-stand_multi-part_studio)
+* [Vice grip assembly](#Vice_grip_assembly)
 
 
 ---
